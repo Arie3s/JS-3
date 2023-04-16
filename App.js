@@ -8,6 +8,8 @@ fetch('data.json')
     let out = `
         <thead>
             <tr>
+                <th>Rank</th>
+                <th></th>
                 <th>Title</th>
                 <th>Genre</th>
                 <th>Year</th>
@@ -17,10 +19,12 @@ fetch('data.json')
         </thead>
         <tbody>
     `;
-    
+    var i=1;
     for (let movie of movies){
         out += `
             <tr>
+                <td>${i}</td>
+                <td ><img class="px-2 inline-block" src="${'https://image.tmdb.org/t/p/w45' + movie.poster_path}" />
                 <td>${movie.title}</td>
                 <td>${movie.genres.toString(", ")}</td>
                 <td>${movie.release_date.substring(0,4)}</td>
@@ -28,6 +32,7 @@ fetch('data.json')
                 <td>${movie.vote_average}</td>
             </tr>
         `;
+        i++;
     }
     
     out += `</tbody>`;
@@ -60,6 +65,7 @@ fetch('data.json')
         out = `
             <thead>
                 <tr>
+                    <th></th>
                     <th>Title</th>
                     <th>Genre</th>
                     <th>Year</th>
@@ -70,9 +76,13 @@ fetch('data.json')
             <tbody>
         `;
         
+        i=1;    
+
         for (let movie of filteredMovies){
             out += `
                 <tr>
+                    <td>${i}</td>
+                    <td><img class="px-2 inline-block" src="${'https://image.tmdb.org/t/p/w45' + movie.poster_path}" />
                     <td>${movie.title}</td>
                     <td>${movie.genres.toString(", ")}</td>
                     <td>${movie.release_date.substring(0,4)}</td>
