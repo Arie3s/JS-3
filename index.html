@@ -41,7 +41,7 @@
 </head>
 <body>
 	<h1 >Movie Recommendation</h1><b><br>
-	<form>
+	<form name="filterform" id="filterform" onsubmit="filter();">
 		<label for="genre">Genre:</label>
 		<select id="genre" name="genre">
 			<option value="">--Select Genre--</option>
@@ -80,27 +80,31 @@
 		<label for="rating">Rating:</label>
 		<select id="rating" name="rating">
 			<option value="">--Select Rating--</option>
-			<option value="1">1 Star</option>
-			<option value="2">2 Stars</option>
-			<option value="3">3 Stars</option>
-			<option value="4">4 Stars</option>
-			<option value="5">5 Stars</option>
+			<option value="1">1+ Stars</option>
+			<option value="2">2+ Stars</option>
+			<option value="3">3+ Stars</option>
+			<option value="4">4+ Stars</option>
+			<option value="5">5+ Star</option>
+			<option value="6">6+ Stars</option>
+			<option value="7">7+ Stars</option>
+			<option value="8">8+ Stars</option>
+			<option value="9">9+ Stars</option>
 		</select>
 
-		<input type="submit" value="Find Movies">
+		<button type="submit" id="filter">Find Movies</button>
 	</form>
     <br><br>
-	<table id="movies" class="table table-striped table-dark">
+	<table id="movies" class="table table-striped">
 		<thead>
 			<tr>
-				<th>Title</th>
-				<th>Genre</th>
-				<th>Year</th>
-				<th>Language</th>
-				<th>Rating</th>
+				<th col-index =1>Title</th>
+				<th col-index =2>Genre</th>
+				<th col-index =3>Year</th>
+				<th col-index =4>Language</th>
+				<th col-index =5>Rating</th>
 			</tr>
 		</thead>
-		<tbody>
+		<tbody></tbody>
 
         </table>
         </body></html>
